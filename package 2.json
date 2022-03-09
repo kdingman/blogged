@@ -1,0 +1,25 @@
+{
+  "name": "blogged",
+  "version": "1.0.0",
+  "description": "Model-View-Controller (MVC) Tech Blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdingman/blogged.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kdingman/blogged/issues"
+  },
+  "homepage": "https://github.com/kdingman/blogged#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
