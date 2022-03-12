@@ -1,7 +1,8 @@
 const express = require('express');
 const sequelize = require('./config/connection');
+const routes = require('./controllers');
 
-// connect routes here
+const helpers = require('./utils/helpers');
 
 // express-session & sequelize store connections
 const session = require('express-session');
@@ -36,6 +37,7 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 // turn on routes
+app.use(routes);
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
