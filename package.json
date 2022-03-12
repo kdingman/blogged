@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Model-View-Controller (MVC) Tech Blog",
   "main": "server.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node server.js",
     "seed": "node seeds/index.js"
