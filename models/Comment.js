@@ -13,7 +13,7 @@ Comment.init (
             autoIncrement: true
         },
         comment_text: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         // Connection to the User and Post Models
@@ -32,7 +32,9 @@ Comment.init (
                 model: 'post',
                 key: 'id'
             }
-        },
+        }
+    },
+    {
         sequelize,
         freezeTableName: true,
         underscored: true,
