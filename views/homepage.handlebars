@@ -1,7 +1,13 @@
-<ul class="post-list">
+<div class="row">
+    <div class="col-auto">
+        <h2> Hello {{user.username}}! </h2>
+    </div>
+</div>
+<br>
+{{#if posts.length}}
+<div class="card flex-column">
     {{#each posts as |post|}}
-    <li>
-        {{> post-info post}}
-    </li>
+    {{> post-info post}}
     {{/each}}
-</ul>
+</div>
+{{/if}}
