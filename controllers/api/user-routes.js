@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 
 // Get All Users
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     User.findAll({
         attributes: { exclude: ['password'] }
     })
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 });
 
 // Get A Single User
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
     User.findOne({
         attributes: { exclude: ['password'] },
         where: {
@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST - Create a User
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -68,7 +68,7 @@ router.post('/', (req, res) => {
 });
 
 // POST - login into User Account
-router.post('/login', (req, res) => {
+router.post('/login', async (req, res) => {
     User.findOne({
         where: {
             username: req.body.username
@@ -109,7 +109,7 @@ router.post('/logout', (req, res) => {
 });
 
 // Update Exisiting Data
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     User.update(req.body, {
         individualHooks: true,
         where: {
@@ -130,7 +130,7 @@ router.put('/:id', (req, res) => {
 });
 
 // Delete a User from the database
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
