@@ -4,7 +4,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // Get All User Posts
-router.get('/', withAuth, async (req, res) => {
+router.get('/', withAuth, (req, res) => {
     Post.findAll({
         attributes: ['id', 'content', 'title', 'created_at'],
         order: [['created_at', 'DESC']],
@@ -31,7 +31,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // Get A Single Post
-router.get('/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -66,7 +66,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // Create A Post
-router.post('/', withAuth, async (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         content: req.body.content,
@@ -80,7 +80,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // Update Post
-router.put('/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             title: req.body.title,
