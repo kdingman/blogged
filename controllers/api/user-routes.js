@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST - Create a User
-router.post('/', async (req, res) => {
+router.post('/', (req, res) => {
     User.create({
         username: req.body.username,
         email: req.body.email,
@@ -60,9 +60,10 @@ router.post('/', async (req, res) => {
             // Declare the session variables
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
+            req.session.email = dbUserData.email;
             req.session.loggedIn = true;
 
-        req.json(dbUserData);
+            res.json(dbUserData);
         });
     });
 });
@@ -71,12 +72,12 @@ router.post('/', async (req, res) => {
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
-            username: req.body.username
+            email: req.body.email
         }
     })
     .then(dbUserData => {
         if(!dbUserData) {
-            res.status(400).json({ message: 'No user found with that username.' });
+            res.status(400).json({ message: 'No user found with that email.' });
             return;
         }
         // Verify User
@@ -88,7 +89,7 @@ router.post('/login', (req, res) => {
         req.session.save(() => {
             // Declare the session variables
             req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
+            req.session.email = dbUserData.email;
             req.session.loggedIn = true;
         
         res.json({ user: dbUserData, message: 'You are now logged in!' });

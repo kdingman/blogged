@@ -4,7 +4,6 @@
     --third: #778899;
     --fourth: #b0c4de;
     --fifth: #708090;
-    --border-radius: 0.3rem;
 }
 
 * {
@@ -13,7 +12,8 @@
 
 body {
     background-color: var(--first);
-    margin: 0;
+    margin-left: 50px;
+    margin-right: 50px;
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--second);
@@ -23,21 +23,37 @@ body {
 
 h1, h2 {
     font-weight: 700;
-    margin: 0;
+    margin: 5px;
     color: var(--second);
     line-height: 1.2;
 }
 
-h2 a:visited {
-    color: var(--third);
-}
-
-h2 a {
-    color: var(--first);
-}
-
 header {
-    margin-top: 50px;
+    width: 100%;
+
+}
+
+.hero {
+  text-align: center;
+  padding: 5% 4%;
+  background-color: var(--first);
+  color: var(--first);
+  border: 3px solid var(--fourth);
+  border-radius: 3px;
+}
+
+.repo-title {
+  font-size: 90px;
+  background-color: var(--first);
+  color: var(--second);
+  padding: 0 10px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.repo-title a {
+  text-align: center;
+  color: var(--second);
 }
 
 main {
@@ -62,7 +78,7 @@ input {
 }
 
 .card-header h2 {
-    color: var(--first);
+    color: var(--second);
 }
 
 .btn {
@@ -72,7 +88,7 @@ input {
     width: 100%;
     display: block;
     margin: 5px 0;
-    border-radius: var(--border-radius);
+    border-radius: 4px;
     color: var(--first);
     border: none;
     outline: none;
@@ -81,24 +97,19 @@ input {
     transform: translate(-1px, -1px);
 }
 
-.btn:hover {
-    color: var(--first);
-    background-color: var(--fourth);
-    transform: translate(0, 0);
-    box-shadow: 2px, 2px var(--fifth);
-    cursor: pointer;
-}
-
 .btn-inline {
     display: inline;
 }
 
 .li-inline {
     display: inline;
+    font-size: 20px;
+    color: var(--first);
+    justify-content: left;
 }
 
 .navbar {
-    width: 100%;
+    width: 91%;
     position: fixed;
     background-color: var(--fourth);
 }
@@ -111,31 +122,6 @@ input {
     color: var(--first);
 }
 
-.hero {
-    padding: 3% 4%;
-    background-color: var(--fifth);
-    color: var(--first);
-
-}
-
-.hero p {
-    max-width: 75%;
-}
-
-.repo-title {
-    font-size: 4rem;
-    background-color: var(--first);
-    color: var(--second);
-    padding: 0 10px;
-    display: inline-block;
-    border-radius: var(--border-radius);
-    box-shadow: 6px 5px var(--fourth);
-}
-
-.repo-title a {
-    color: var(--second);
-}
-
 .list-group {
     padding: 1%;
 }
@@ -143,31 +129,25 @@ input {
 .list-item {
     margin-bottom: 10px;
     padding: 1.5%;
-    border-radius: var(--border-radius);
+    border-radius: 4px;
     background-color: var(--first);
     color: var(--second);
     text-decoration: none;
 }
 
-.list-item:hover {
-    background-color: var(--fourth);
-}
-
-.footer a {
-    display: inline-block;
-    padding: 1em;
-    margin-bottom: .5em;
+.footer {
+    display: flex;
+    padding: 1%;
+    justify-content: center;
     background-color: var(--first);
     color: var(--second);
-    border-radius: var(--border-radius);
-    text-decoration: none;
+    font-size: larger;
 }
 
 /*---------------- Cards ------------------*/
 .card {
-    margin: 0 0 20px 0;
-    border: 3px solid var(--fifth);
-    border-radius: var(--border-radius);
+    margin: 10px 0 20px 10px;
+    border-radius: 3px;
 }
 
 .card-header {
@@ -177,15 +157,25 @@ input {
 }
 
 .card-body {
-    padding: 1%
+    padding: 2%
 }
 
-.card-bodyx {
-    padding: 4%;
-    color: var(--second);
-    background-color: var(--first);
-    font-size: 1rem;
-    margin: 10px;
+.comment-form {
+  margin-bottom: 5%;
+
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+  color: var(--second);
+}
+
+.comment .meta {
+  color: var(--second);
+  font: 90px;
+  margin-bottom: .5%;
+  opacity: .6;
 }
 
 /*-----------------Forms-------------*/
@@ -206,7 +196,7 @@ input {
     margin: 5px 0;
     font-size: 1.3rem;
     border: 2px solid var(--fourth);
-    border-radius: var(--border-radius);
+    border-radius: 3px;
 }
 
 /*---------------------------MEDIA--------------------------*/

@@ -1,14 +1,14 @@
 {{! Login Form }}
 <div class="card">
     <h2 class="card-header">Login</h2>
-    <form class="card-body login-form">
+    <form class="card-body" id="login-form">
         <div class="form-group">
             <label class="form-label">Email:</label>
             <input class="form-input" type="text" id="email-login" />
         </div>
         <div class="form-group">
             <label class="form-label">Password:</label>
-            <input class="form-input" type="password" id="password-login" />
+            <input class="form-control" type="password" id="password-login" autocomplete="off"/>
         </div>
         <div class="form-group">
             <button class="btn btn-secondary" type="submit">Login</button>
@@ -18,4 +18,4 @@
         <a href="/signup">Need to Sign Up</a>
 </div>
 
-<script src="/public/javascript/login.js"></script>
+<script src="/javascript/login.js"></script>

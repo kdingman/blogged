@@ -4,7 +4,7 @@ const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // Get All User Posts
-router.get('/', withAuth, (req, res) => {
+router.get('/', (req, res) => {
     Post.findAll({
         attributes: ['id', 'content', 'title', 'created_at'],
         order: [['created_at', 'DESC']],
@@ -31,7 +31,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 // Get A Single Post
-router.get('/:id', withAuth, (req, res) => {
+router.get('/:id', (req, res) => {
     Post.findOne({
         where: {
             id: req.params.id
@@ -106,7 +106,7 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 // Delete A Post
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id

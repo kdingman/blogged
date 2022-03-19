@@ -21,7 +21,7 @@ router.get('/', withAuth, (req, res) => {
             },
             {
                 model: User,
-                attributes: ['usernamen']
+                attributes: ['username']
             }
         ]
     })
@@ -37,10 +37,7 @@ router.get('/', withAuth, (req, res) => {
 
 // User must be logged in to make Edits
 router.get('/edit/:id', withAuth, (req, res) => {
-    Post.findOne({
-        where: {
-            id: req.params.id
-        },
+    Post.findByPk(req.params.id, {
         attributes: ['id', 'title', 'content', 'created_at'],
         include: [
             {

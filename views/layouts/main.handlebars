@@ -13,15 +13,18 @@
   <nav class="navbar">
     <ul>
       <li class="li-inline nav-item"><a href="/">Home</a></li>
+      {{#if loggedIn}}
       <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
-      {{#unless loggedIn}}
-      <li class="li-inline nav-item"><a href="/logout" id="logout-link">Logout</a></li>
-      {{/unless}}
+      <li class="li-inline nav-item"><a href="/logout" id="logout">Logout</a></li>
+      {{else}}
+      <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      <li class="li-inline nave-item"><a href="/signup">Sign Up Here</a></li>
+      {{/if}}
     </ul>
   </nav>
 
   <header class="hero">
-    <h1 class="repo-title"><a href="/">Blogged</a></h1>
+    <h1 class="repo-title"><a href="/">#Blogged</a></h1>
   </header>
 
     <main class="col-auto">
@@ -29,12 +32,14 @@
     </main>
     
     <footer>
-      💙 Thanks for Blogging!
+      <div class="footer">
+      💙 #ThanksforBlogging!
+      </div>
     </footer>
   </div>
 
 {{#if loggedIn}}
-<script src="/public/javascript/logout.js"></script>
+<script src="/javascript/logout.js"></script>
 {{/if}}
 </body>
 

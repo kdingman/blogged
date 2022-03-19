@@ -1,3 +1,5 @@
+<article>
+    <a href="/dashboard">&larr;To Dashboard</a>
 <div class="card">
     <h2 class="card-header">Edit Post</h2>
     <form class="card-body" id="edit-post-form">
@@ -12,12 +14,25 @@
 
         <button class="btn btn-secondary" type="submit">Edit</button>
         <input type="hidden" name="post-id" value="{{post.id}}"/>
-    </form>
-    <div class="card-body">
-        <button class="btn btn-secondary" type="click" id="delete-btn">Delete</button>
-    </div>
+   
+        <div class="card-body">
+            <button class="btn btn-secondary" type="click" id="delete-btn">Delete</button>
+         </form>
+        </div>
 </div>
+</article>
 
-<script src="/public/javascript/edit-post.js"></script>
-<script src="/public/javascript/comment.js"></script>
-<script src="/public//javascript/delete-post.js"></script>
+<form class="comment-form">
+    <div class="card">
+        <textarea class="card-body" name="comment-body"></textarea>
+    </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/comment.js"></script>
+<script src="/javascript/delete-post.js"></script>

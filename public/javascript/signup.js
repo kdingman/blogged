@@ -8,7 +8,7 @@ const password = document.querySelector('#password-signup').value.trim();
 
 if (username && email && password) {
     const response = await fetch('/api/users', {
-        method: 'post',
+        method: 'POST',
         body: JSON.stringify({
             username,
             email,
@@ -25,4 +25,4 @@ if (username && email && password) {
 }
 }
 
-document.querySelector('.sign-up-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
