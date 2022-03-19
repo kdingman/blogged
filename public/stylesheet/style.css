@@ -109,7 +109,7 @@ input {
 }
 
 .navbar {
-    width: 95%;
+    width: 91%;
     position: fixed;
     background-color: var(--fourth);
 }
